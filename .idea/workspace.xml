@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22a982c2-8187-44b4-a8d6-e212761fc21a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/model/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/GameStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/WelcomeStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/controller/WelcomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ahorcado/inicial.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/WelcomeStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/WelcomeStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ahorcado/welcome-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/ahorcado/welcome-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +47,43 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/leale/Documents/carpeta/Ahorcado",
+    "last_opened_file_path": "C:/Users/leale/Downloads/craps-game-sesion-4-final",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5735632",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.ahorcado.Main" />
+      <module name="Ahorcado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.ahorcado.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,5 +113,15 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.reflect.InvocationTargetException" package="java.lang.reflect" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
