@@ -6,25 +6,49 @@ import com.example.ahorcado.view.WelcomeStage;
 import com.example.ahorcado.view.alert.AlertBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
 public class WelcomeController {
+    // Modelos
+    private Player player;
+
+    // Componentes GUI
     @FXML
     private TextField NickNameText;
     @FXML
+    private Label err;
+
+    /*
+    * Funcion para iniciar el juego con el nombre del usuario
+    *
+    * @param event El evento que se manipula
+    *
+     */
+    @FXML
     public void onHandleButtonPLay(ActionEvent event) throws IOException {
-        String name = NickNameText.getText();
+        try {
+            String name = NickNameText.getText();
+            if (name == null || name.trim().isEmpty()) { // Validar Campo de Texto
+                this.err.setText("El nombre no puede estar Vacio");
+                throw new Error("Name No puede estar vacio");
+            }
+            this.err.setText("");
+            createPlayer(name);
+            GameStage.getInstance().getGameController().setPlayer(this.player);
+            WelcomeStage.deleteInstance();
+        } catch (Error err) {
+            System.out.println(err);
+        }
+    }
 
-
-        Player player = new Player(name,1);
-
-        System.out.println(player.getName());
-
-        // new AlertBox().ShowMenssage("Alerta", "Registro de player","Jugador creado");
-
-        GameStage.getInstance();
-        WelcomeStage.deleteInstance();
+    /*
+    * Funcion para crear el jugador
+    * @param name Nombre del jugador
+    */
+    void createPlayer(String name) {
+        this.player = new Player(name, 1);
     }
 }

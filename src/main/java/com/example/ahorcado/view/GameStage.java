@@ -17,6 +17,7 @@ public class GameStage extends Stage {
 
         FXMLLoader loader =  new FXMLLoader(getClass().getResource(url));
         Parent root = loader.load();
+        gameController = loader.getController();
         setTitle("Game");
         Scene scene = new Scene(root);
         setScene(scene);
@@ -40,5 +41,9 @@ public class GameStage extends Stage {
     public static void deleteInstance() {
         GameStageHolder.INSTANCE.close();
         GameStageHolder.INSTANCE = null;
+    }
+
+    public GameController getGameController() {
+        return gameController;
     }
 }
