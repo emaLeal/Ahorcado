@@ -10,12 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ahorcado.controller.WelcomeController">
    <children>
       <AnchorPane prefHeight="491.0" prefWidth="687.0">
          <children>
-            <Button layoutX="246.0" layoutY="356.0" mnemonicParsing="false" opacity="0.87" prefHeight="68.0" prefWidth="157.0" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Empezar" underline="true">
+            <Button defaultButton="true" layoutX="246.0" layoutY="356.0" mnemonicParsing="false" onAction="#onHandleButtonPLay" opacity="0.87" prefHeight="68.0" prefWidth="157.0" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Empezar" underline="true">
                <font>
                   <Font name="System Bold Italic" size="22.0" />
                </font>
@@ -36,7 +35,7 @@
                   </RadialGradient>
                </textFill>
             </Button>
-            <TextField alignment="CENTER" layoutX="160.0" layoutY="302.0" opacity="0.73" prefHeight="39.0" prefWidth="330.0" promptText="Ingresa tu Nombre" style="-fx-background-color: #3e3e3e;">
+            <TextField fx:id="NickNameText" alignment="CENTER" layoutX="160.0" layoutY="302.0" opacity="0.64" pickOnBounds="false" prefHeight="39.0" prefWidth="330.0" promptText="Ingresa tu Nombre" style="-fx-background-color: #3e3e3e; -fx-text-fill: white;">
                <font>
                   <Font size="18.0" />
                </font>
