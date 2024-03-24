@@ -49,6 +49,6 @@ public class WelcomeController {
     * @param name Nombre del jugador
     */
     void createPlayer(String name) {
-        this.player = new Player(name, 1);
+        this.player = new Player(name, 1, 0);
     }
 }
