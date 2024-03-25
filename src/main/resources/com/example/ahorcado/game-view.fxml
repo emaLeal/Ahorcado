@@ -38,12 +38,12 @@
                   </RadialGradient>
                </textFill>
             </Button>
-            <PasswordField fx:id="word" layoutX="178.0" layoutY="259.0" prefHeight="37.0" prefWidth="244.0" promptText="Ingresa La palabra deseada" style="-fx-background-color: #3e3e3e; -fx-border-color: red; -fx-border-width: 3px;">
+            <PasswordField fx:id="word" layoutX="178.0" layoutY="258.0" prefHeight="37.0" prefWidth="244.0" promptText="Ingresa La palabra deseada" style="-fx-background-color: #3e3e3e; -fx-border-color: red; -fx-border-width: 3px;">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </PasswordField>
-            <Button layoutX="263.0" layoutY="320.0" mnemonicParsing="false" onAction="#onHandleButtonGetWord" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Button">
+            <Button layoutX="267.0" layoutY="318.0" mnemonicParsing="false" onAction="#onHandleButtonGetWord" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Jugar">
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
