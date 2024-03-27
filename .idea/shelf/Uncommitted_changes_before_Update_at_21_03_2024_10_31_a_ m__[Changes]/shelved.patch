@@ -1,0 +1,195 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"19 (2)\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 884195d569bee6af08a9fabacb5c9d01ae488fe3)
++++ b/.idea/misc.xml	(date 1710866377946)
+@@ -5,10 +5,16 @@
+     <option name="originalFiles">
+       <list>
+         <option value="$PROJECT_DIR$/pom.xml" />
++        <option value="$PROJECT_DIR$/../demo/pom.xml" />
+       </list>
+     </option>
++    <option name="ignoredFiles">
++      <set>
++        <option value="$PROJECT_DIR$/../demo/pom.xml" />
++      </set>
++    </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19 (2)" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="semeru-19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/example/ahorcado/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ahorcado;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.stage.Stage;\r\n\r\npublic class Main extends Application {\r\n\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage primaryStage) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/ahorcado/Main.java b/src/main/java/com/example/ahorcado/Main.java
+--- a/src/main/java/com/example/ahorcado/Main.java	(revision 884195d569bee6af08a9fabacb5c9d01ae488fe3)
++++ b/src/main/java/com/example/ahorcado/Main.java	(date 1711035062563)
+@@ -3,6 +3,8 @@
+ import javafx.application.Application;
+ import javafx.stage.Stage;
+ 
++import java.io.IOException;
++
+ public class Main extends Application {
+ 
+     public static void main(String[] args) {
+@@ -10,7 +12,7 @@
+     }
+ 
+     @Override
+-    public void start(Stage primaryStage) {
++    public void start(Stage primaryStage) throws IOException {
+ 
+     }
+ }
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/src/main/resources\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision 884195d569bee6af08a9fabacb5c9d01ae488fe3)
++++ b/.idea/encodings.xml	(date 1710866377913)
+@@ -3,5 +3,7 @@
+   <component name="Encoding">
+     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/../demo/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/../demo/src/main/resources" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 884195d569bee6af08a9fabacb5c9d01ae488fe3)
++++ b/.idea/vcs.xml	(date 1710866378093)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"22a982c2-8187-44b4-a8d6-e212761fc21a\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/ahorcado/model/Player.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/GameStage.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/WelcomeStage.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/ahorcado/HelloApplication.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/ahorcado/inicial.fxml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaFXApplication\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2d9G52ZAgRg7aR7a2aKZBz3x8mw\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/leale/Documents/carpeta/Ahorcado\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"22a982c2-8187-44b4-a8d6-e212761fc21a\" name=\"Changes\" comment=\"\" />\r\n      <created>1709412696374</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1709412696374</updated>\r\n      <workItem from=\"1709412697486\" duration=\"545000\" />\r\n      <workItem from=\"1709413712230\" duration=\"220000\" />\r\n      <workItem from=\"1709413945366\" duration=\"1414000\" />\r\n      <workItem from=\"1709754972148\" duration=\"716000\" />\r\n      <workItem from=\"1709755735273\" duration=\"44000\" />\r\n      <workItem from=\"1710530472090\" duration=\"208000\" />\r\n      <workItem from=\"1710695736707\" duration=\"178000\" />\r\n      <workItem from=\"1710777530024\" duration=\"252000\" />\r\n      <workItem from=\"1710778229606\" duration=\"1131000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 884195d569bee6af08a9fabacb5c9d01ae488fe3)
++++ b/.idea/workspace.xml	(date 1710981105692)
+@@ -5,26 +5,16 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="22a982c2-8187-44b4-a8d6-e212761fc21a" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/model/Player.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/GameStage.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/view/WelcomeStage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/HelloApplication.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/ahorcado/inicial.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/ahorcado/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="JavaFXApplication" />
+-        <option value="Class" />
+-      </list>
+-    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -45,26 +35,29 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.HelloApplication.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "master",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/leale/Documents/carpeta/Ahorcado",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
++    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/jaque/IdeaProjects/craps-game&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
++        <option value="jdk-13.0.14-azul-13.0.14-4caba194b151-0dc6e15b" />
++        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
++        <option value="jdk-19.0.2-semeru-19.0.2-4caba194b151-6abc030f" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -80,11 +73,7 @@
+       <workItem from="1709413712230" duration="220000" />
+       <workItem from="1709413945366" duration="1414000" />
+       <workItem from="1709754972148" duration="716000" />
+-      <workItem from="1709755735273" duration="44000" />
+-      <workItem from="1710530472090" duration="208000" />
+-      <workItem from="1710695736707" duration="178000" />
+-      <workItem from="1710777530024" duration="252000" />
+-      <workItem from="1710778229606" duration="1131000" />
++      <workItem from="1710956856431" duration="914000" />
+     </task>
+     <servers />
+   </component>
