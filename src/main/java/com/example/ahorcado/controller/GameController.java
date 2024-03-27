@@ -17,7 +17,7 @@ public class GameController {
 
     // Elementos
     @FXML
-    private PasswordField word;
+    private String word = "CELULAR";
     @FXML
     private Label playerName;
     @FXML
@@ -41,6 +41,21 @@ public class GameController {
         GamePane.setVisible(true);
     }
 
+    public void onHandleButtonLetter(ActionEvent event){
+
+        Button eventButton = (Button) event.getSource();
+        String letter = eventButton.getText();
+        eventButton.setDisable(true);
+
+        if(word.contains(letter)){
+            eventButton.setStyle("-fx-text-fill: white; -fx-background-color: green; -fx-border-color: white");
+
+        }else{
+            eventButton.setStyle("-fx-text-fill: white; -fx-background-color: red; -fx-border-color: white");
+
+        }
+
+    }
     public void setPlayer(Player player) {
         this.player = player;
         playerName.setText(player.getName());

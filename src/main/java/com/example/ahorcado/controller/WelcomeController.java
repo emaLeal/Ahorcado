@@ -29,6 +29,8 @@ public class WelcomeController {
      */
     @FXML
     public void onHandleButtonPLay(ActionEvent event) throws IOException {
+
+
         try {
             String name = NickNameText.getText();
             if (name == null || name.trim().isEmpty()) { // Validar Campo de Texto

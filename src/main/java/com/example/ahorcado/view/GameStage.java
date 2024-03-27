@@ -13,7 +13,7 @@ public class GameStage extends Stage {
 
     private GameController gameController;
     public  GameStage() throws IOException{
-        String url = "/com/example/ahorcado/game-view.fxml";
+        String url = "/com/example/ahorcado/game-view2.fxml";
 
         FXMLLoader loader =  new FXMLLoader(getClass().getResource(url));
         Parent root = loader.load();
