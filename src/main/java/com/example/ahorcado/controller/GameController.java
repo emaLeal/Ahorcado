@@ -56,9 +56,10 @@ public class GameController {
         }
 
     }
-    public void setPlayer(Player player) {
+    public void setPlayer(Player player, String palabra) {
         this.player = player;
         playerName.setText(player.getName());
         score.setText(String.valueOf(player.getScore()));
+        this.word = palabra;
     }
 }

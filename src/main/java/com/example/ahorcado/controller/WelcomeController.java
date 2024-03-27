@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class WelcomeController {
+public class    WelcomeController {
     // Modelos
     private Player player;
 
@@ -39,7 +39,8 @@ public class WelcomeController {
             }
             this.err.setText("");
             createPlayer(name);
-            GameStage.getInstance().getGameController().setPlayer(this.player);
+            String palabra = new AlertBox().ShowMenssage("Ingresa palabra", "Palabra");
+            GameStage.getInstance().getGameController().setPlayer(this.player, palabra);
             WelcomeStage.deleteInstance();
         } catch (Error err) {
             System.out.println(err);

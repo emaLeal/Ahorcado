@@ -1,9 +1,11 @@
 package com.example.ahorcado.view;
 
 import com.example.ahorcado.controller.GameController;
+import com.example.ahorcado.view.alert.AlertBox;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -14,17 +16,14 @@ public class GameStage extends Stage {
     private GameController gameController;
     public  GameStage() throws IOException{
         String url = "/com/example/ahorcado/game-view2.fxml";
-
         FXMLLoader loader =  new FXMLLoader(getClass().getResource(url));
         Parent root = loader.load();
         gameController = loader.getController();
         setTitle("Game");
         Scene scene = new Scene(root);
         setScene(scene);
-
         getIcons().add(new Image(
                 String.valueOf(getClass().getResource("/com/example/ahorcado/images/favicon.png"))));
-
         setResizable(false);
         show();
     }
