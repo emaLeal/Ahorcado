@@ -17,6 +17,8 @@ public class GameController {
 
     // Elementos
     @FXML
+    private Label Word;
+    @FXML
     private String word = "CELULAR";
     @FXML
     private Label playerName;
@@ -46,20 +48,50 @@ public class GameController {
         Button eventButton = (Button) event.getSource();
         String letter = eventButton.getText();
         eventButton.setDisable(true);
+        String prov = Word.getText();
 
+        for (int i = 0;i < word.length();i++) {
+            if (letter.equals(String.valueOf(word.charAt(i)))){
+                prov = reemplazarIndice(prov, i, letter.charAt(0));
+                player.setScore(player.getScore() + 50);
+                cambiarPuntaje();
+            }
+        }
+        Word.setText(prov);
         if(word.contains(letter)){
             eventButton.setStyle("-fx-text-fill: white; -fx-background-color: green; -fx-border-color: white");
 
         }else{
+            player.setScore(player.getScore() - 75);
+            cambiarPuntaje();
             eventButton.setStyle("-fx-text-fill: white; -fx-background-color: red; -fx-border-color: white");
-
         }
 
     }
     public void setPlayer(Player player, String palabra) {
         this.player = player;
         playerName.setText(player.getName());
+        cambiarPuntaje();
+        this.word = palabra.toUpperCase();
+        String prov = "";
+        for (int i = 0;i<word.length();i++) {
+            prov += "_";
+        }
+        Word.setText(prov);
+    }
+
+    public static String reemplazarIndice(String str, int indice, char caracter) {
+        if (indice < 0 || indice >= str.length()) {
+            // Índice fuera de rango, devuelve el string original
+            return str;
+        }
+
+        char[] chars = str.toCharArray(); // Convierte el string en un arreglo de caracteres
+        chars[indice] = caracter; // Reemplaza el carácter en el índice especificado
+        return new String(chars); // Convierte el arreglo de caracteres de nuevo en un string y devuelve
+    }
+
+    private void cambiarPuntaje() {
         score.setText(String.valueOf(player.getScore()));
-        this.word = palabra;
     }
 }
