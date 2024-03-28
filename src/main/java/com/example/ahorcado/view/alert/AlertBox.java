@@ -39,9 +39,8 @@ public class AlertBox implements IAlertBox{
         // Mostramos el diálogo y esperamos hasta que se complete
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            String password = passwordField.getText();
-            System.out.println(password);
-            return password;
+            String word = passwordField.getText();
+            return word;
         }
         return null;
     }
