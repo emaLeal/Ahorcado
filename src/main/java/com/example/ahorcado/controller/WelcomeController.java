@@ -40,6 +40,7 @@ public class    WelcomeController {
             this.err.setText("");
             createPlayer(name);
             String palabra = new AlertBox().ShowMenssage("Ingresa palabra", "Palabra");
+
             GameStage.getInstance().getGameController().setPlayer(this.player, palabra);
             WelcomeStage.deleteInstance();
         } catch (Error err) {
