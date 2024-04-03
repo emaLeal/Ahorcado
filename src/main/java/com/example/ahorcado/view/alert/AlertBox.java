@@ -4,6 +4,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 
 import java.util.Optional;
@@ -35,6 +36,17 @@ public class AlertBox implements IAlertBox{
         // Creamos un contenedor para el campo de contraseña y el botón
         VBox vbox = new VBox(passwordField, confirmButton);
         dialog.getDialogPane().setContent(vbox);
+
+        // Aplicar estilo
+        dialog.getDialogPane().setStyle("-fx-text-fill: red;-fx-background-color: red;-fx-border-color: black");
+        confirmButton.setStyle("-fx-text-fill: white; -fx-background-color: black;-fx-border-color: red ");
+        dialog.setGraphic(new javafx.scene.image.ImageView(new Image(getClass().getResourceAsStream("/com/example/ahorcado/images/favicon.png"))));
+        dialog.setResizable(false);
+        //cambiar el color del encabezado (no le sepo)
+        //dialog.getDialogPane().lookup(".header - panel").setStyle("-fx-background-color: red; -fx-text-fill: white;");
+        dialog.getDialogPane().getScene().getWindow().setWidth(300);
+        dialog.getDialogPane().getScene().getWindow().setHeight(200);
+
 
         // Mostramos el diálogo y esperamos hasta que se complete
         Optional<ButtonType> result = dialog.showAndWait();

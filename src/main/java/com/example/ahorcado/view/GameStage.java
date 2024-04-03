@@ -1,11 +1,9 @@
 package com.example.ahorcado.view;
 
 import com.example.ahorcado.controller.GameController;
-import com.example.ahorcado.view.alert.AlertBox;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -34,7 +32,7 @@ public class GameStage extends Stage {
     }
 
     public static GameStage getInstance() throws IOException {
-        return GameStage.GameStageHolder.INSTANCE = new GameStage();
+        return GameStageHolder.INSTANCE = new GameStage();
     }
 
     public static void deleteInstance() {
