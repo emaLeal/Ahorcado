@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -224,7 +225,7 @@
             <HBox fx:id="HboxErorr" alignment="CENTER" prefHeight="83.0" prefWidth="332.0" spacing="10.0" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
-      <BorderPane prefHeight="525.0" prefWidth="388.0">
+      <BorderPane opacity="0.91" prefHeight="525.0" prefWidth="388.0">
          <top>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
@@ -238,6 +239,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
+                  <Button lineSpacing="6.0" mnemonicParsing="false" text="Ayuda" />
                </children>
             </HBox>
          </top>
@@ -248,6 +250,13 @@
                </image>
             </ImageView>
          </center>
+         <bottom>
+            <AnchorPane prefHeight="65.0" prefWidth="381.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="144.0" layoutY="20.0" mnemonicParsing="false" onAction="#OnHandleButtonEnd" style="-fx-background-color: brown; -fx-text-fill: white;" text="Volver al inicio" />
+               </children>
+            </AnchorPane>
+         </bottom>
       </BorderPane>
    </children>
 </HBox>

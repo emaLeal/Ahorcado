@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -48,7 +47,12 @@ public class GameController {
         PaneStart.setVisible(false);
         GamePane.setVisible(true);
     }
-
+    // para volver al inicio despues de jugar
+    @FXML
+    public void OnHandleButtonEnd(ActionEvent event) throws IOException{
+        WelcomeStage.getInstance();
+        GameStage.deleteInstance();
+    }
     public void onHandleButtonLetter(ActionEvent event){
 
         if(game.getStart()){
