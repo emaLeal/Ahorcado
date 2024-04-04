@@ -13,7 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.Random;
 
 public class GameController {
     private Player player;
@@ -49,12 +51,22 @@ public class GameController {
     }
     // para volver al inicio despues de jugar
     @FXML
-    public void OnHandleButtonEnd(ActionEvent event) throws IOException{
+    public void onHandleButtonEnd(ActionEvent event) throws IOException{
         WelcomeStage.getInstance();
         GameStage.deleteInstance();
     }
-    public void onHandleButtonLetter(ActionEvent event){
 
+    @FXML
+    public void onHandleButtonHelp(ActionEvent event) throws IOException{
+        darPista();
+        game.setAttemptHelp(game.getAttemptHelp() + 1);
+        if (game.getAttemptHelp() == 3) {
+            Button eventButton = (Button) event.getSource();
+            eventButton.setDisable(true);
+        }
+    }
+    public void onHandleButtonLetter(ActionEvent event){
+interactionLabel.setWrapText(true);
         if(game.getStart()){
             Button eventButton = (Button) event.getSource();
             String letter = eventButton.getText();
@@ -75,7 +87,7 @@ public class GameController {
 
                 eventButton.setStyle("-fx-text-fill: white; -fx-background-color: green; -fx-border-color: white");
                 if(Objects.equals(Word.getText(), game.getWord())){
-                    setInteractionLabel("Ganaste!!" +"\uD83D\uDE00", "green");
+                    setInteractionLabel("Ganaste!! Palabra:" +game.getWord()+"\uD83D\uDE00", "green");
                     game.endGame();
                 }else{
                     setInteractionLabel("Bien!!" +"\uD83D\uDE00", "green");
@@ -92,7 +104,7 @@ public class GameController {
                     eventButton.setStyle("-fx-text-fill: white; -fx-background-color: red; -fx-border-color: white");
                 }
                 if(game.getAttempts() == 6){
-                    setInteractionLabel("Perdiste!!" +"\uD83D\uDE41", "red");
+                    setInteractionLabel("Perdiste!! Palabra:" +game.getWord() +"\uD83D\uDE41", "red");
                     game.endGame();
                 }
             }
@@ -142,5 +154,23 @@ public class GameController {
     private void setInteractionLabel(String text, String color){
         interactionLabel.setStyle("-fx-text-fill:"+ color);
         interactionLabel.setText(text);
+    }
+
+    private char obtenerPista(String palabraSecreta) {
+        Random rand = new Random();
+        int index = rand.nextInt(palabraSecreta.length());
+        return palabraSecreta.charAt(index);
+    }
+
+    private void darPista() {
+        String palabraSecreta = game.getWord();
+        char pista = obtenerPista(palabraSecreta);
+        while (game.help.contains(pista) && Word.getText().contains(""+pista)) {
+            System.out.println("true");
+            pista = obtenerPista(palabraSecreta);
+        }
+        game.help.add(pista);
+
+        setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
     }
 }
