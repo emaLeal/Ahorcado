@@ -2,16 +2,23 @@ package com.example.ahorcado.model;
 
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 
     private String word;
     private int attempts;
     private Image img;
     private boolean start;
+    private int attemptHelp;
+    public List<Character> help;
 
     public Game(String word) {
         this.word = word;
         this.attempts = 0;
+        this.attemptHelp=0;
+        this.help = new ArrayList<>();
         this.start = true;
     }
 
@@ -42,5 +49,13 @@ public class Game {
 
     public void endGame(){
         this.start = false;
+    }
+
+    public int getAttemptHelp() {
+        return attemptHelp;
+    }
+
+    public void setAttemptHelp(int attemptHelp) {
+        this.attemptHelp = attemptHelp;
     }
 }
