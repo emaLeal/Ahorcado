@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
@@ -38,17 +37,6 @@ public class GameController {
     @FXML
     private HBox HboxErorr;
 
-    @FXML
-    public void onHandleButtonBack(ActionEvent event) throws IOException {
-        WelcomeStage.getInstance();
-        GameStage.deleteInstance();
-    }
-
-    @FXML
-    public void onHandleButtonGetWord(ActionEvent event) throws IOException {
-        PaneStart.setVisible(false);
-        GamePane.setVisible(true);
-    }
     // para volver al inicio despues de jugar
     @FXML
     public void onHandleButtonEnd(ActionEvent event) throws IOException{
