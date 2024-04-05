@@ -66,7 +66,7 @@ public class GameController {
         }
     }
     public void onHandleButtonLetter(ActionEvent event){
-interactionLabel.setWrapText(true);
+        interactionLabel.setWrapText(true);
         if(game.getStart()){
             Button eventButton = (Button) event.getSource();
             String letter = eventButton.getText();
@@ -85,7 +85,7 @@ interactionLabel.setWrapText(true);
 
             if(word.contains(letter)){
 
-                eventButton.setStyle("-fx-text-fill: white; -fx-background-color: green; -fx-border-color: white");
+                eventButton.setStyle("-fx-text-fill: white; -fx-background-color:  #3c3c3c; -fx-border-color: green;-fx-border-width: 2px");
                 if(Objects.equals(Word.getText(), game.getWord())){
                     setInteractionLabel("Ganaste!! Palabra:" +game.getWord()+"\uD83D\uDE00", "green");
                     game.endGame();
@@ -101,7 +101,7 @@ interactionLabel.setWrapText(true);
                     imageHanged.setImage(game.getImg());
                     player.setScore(player.getScore() - 75);
                     cambiarPuntaje();
-                    eventButton.setStyle("-fx-text-fill: white; -fx-background-color: red; -fx-border-color: white");
+                    eventButton.setStyle("-fx-text-fill: white; -fx-background-color:  #3c3c3c; -fx-border-color: red;-fx-border-width: 2px");
                 }
                 if(game.getAttempts() == 6){
                     setInteractionLabel("Perdiste!! Palabra:" +game.getWord() +"\uD83D\uDE41", "red");
@@ -118,7 +118,7 @@ interactionLabel.setWrapText(true);
         playerName.setText(player.getName());
         game = new Game(palabra.toUpperCase());
 
-        String prov = "_".repeat(game.getWord().length());
+        String prov = generarCadenaGuiones(game.getWord());
 
         Word.setText(prov);
     }
@@ -165,12 +165,32 @@ interactionLabel.setWrapText(true);
     private void darPista() {
         String palabraSecreta = game.getWord();
         char pista = obtenerPista(palabraSecreta);
-        while (game.help.contains(pista) && Word.getText().contains(""+pista)) {
+        while (Word.getText().contains(""+pista) || game.help.contains(pista)) {
+
             System.out.println("true");
             pista = obtenerPista(palabraSecreta);
         }
         game.help.add(pista);
 
         setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
+    }
+
+    public static String generarCadenaGuiones(String palabra) {
+        StringBuilder cadena = new StringBuilder();
+
+        // Itera sobre cada caracter de la palabra original
+        for (int i = 0; i < palabra.length(); i++) {
+            char caracter = palabra.charAt(i);
+
+            // Si el caracter es un espacio, añade un espacio en blanco a la cadena
+            if (caracter == ' ') {
+                cadena.append(' ');
+            } else {
+                // Si no es un espacio, añade un guion bajo a la cadena
+                cadena.append('_');
+            }
+        }
+
+        return cadena.toString();
     }
 }
