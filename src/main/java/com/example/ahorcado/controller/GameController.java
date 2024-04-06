@@ -63,6 +63,7 @@ public class GameController {
             String word = game.getWord();
 
             for (int i = 0;i < word.length();i++) {
+
                 if (letter.equals(String.valueOf(word.charAt(i)))){
                     prov = reemplazarIndice(prov, i, letter.charAt(0));
                     player.setScore(player.getScore() + 50);
@@ -153,14 +154,14 @@ public class GameController {
     private void darPista() {
         String palabraSecreta = game.getWord();
         char pista = obtenerPista(palabraSecreta);
-        while (Word.getText().contains(""+pista) || game.help.contains(pista)) {
+        if(game.getStart()){
+            while (Word.getText().contains(""+pista) || game.help.contains(pista) ) {
+                pista = obtenerPista(palabraSecreta);
+            }
+            game.help.add(pista);
 
-            System.out.println("true");
-            pista = obtenerPista(palabraSecreta);
+            setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
         }
-        game.help.add(pista);
-
-        setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
     }
 
     public static String generarCadenaGuiones(String palabra) {
