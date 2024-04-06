@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
@@ -38,17 +37,6 @@ public class GameController {
     @FXML
     private HBox HboxErorr;
 
-    @FXML
-    public void onHandleButtonBack(ActionEvent event) throws IOException {
-        WelcomeStage.getInstance();
-        GameStage.deleteInstance();
-    }
-
-    @FXML
-    public void onHandleButtonGetWord(ActionEvent event) throws IOException {
-        PaneStart.setVisible(false);
-        GamePane.setVisible(true);
-    }
     // para volver al inicio despues de jugar
     @FXML
     public void onHandleButtonEnd(ActionEvent event) throws IOException{
@@ -75,6 +63,7 @@ public class GameController {
             String word = game.getWord();
 
             for (int i = 0;i < word.length();i++) {
+
                 if (letter.equals(String.valueOf(word.charAt(i)))){
                     prov = reemplazarIndice(prov, i, letter.charAt(0));
                     player.setScore(player.getScore() + 50);
@@ -165,14 +154,14 @@ public class GameController {
     private void darPista() {
         String palabraSecreta = game.getWord();
         char pista = obtenerPista(palabraSecreta);
-        while (Word.getText().contains(""+pista) || game.help.contains(pista)) {
+        if(game.getStart()){
+            while (Word.getText().contains(""+pista) || game.help.contains(pista) ) {
+                pista = obtenerPista(palabraSecreta);
+            }
+            game.help.add(pista);
 
-            System.out.println("true");
-            pista = obtenerPista(palabraSecreta);
+            setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
         }
-        game.help.add(pista);
-
-        setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
     }
 
     public static String generarCadenaGuiones(String palabra) {

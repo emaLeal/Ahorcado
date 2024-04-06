@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -14,114 +17,296 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ahorcado.controller.GameController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ahorcado.controller.GameController">
    <children>
-      <AnchorPane prefHeight="424.0" prefWidth="600.0">
-         <children>
-            <Button defaultButton="true" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onHandleButtonBack" opacity="0.87" prefHeight="37.0" prefWidth="92.0" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Regresar" underline="true">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-               <textFill>
-                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.9700000286102295" opacity="0.9465649127960205" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.10980392247438431" green="0.10980392247438431" blue="0.10980392247438431" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </RadialGradient>
-               </textFill>
-            </Button>
-            <GridPane alignment="CENTER_RIGHT" layoutX="263.0" layoutY="18.0">
+      <BorderPane prefHeight="500.0" prefWidth="416.0">
+         <top>
+            <HBox prefHeight="182.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="182.0" prefWidth="418.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/favicon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="EL AHORCADO">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/favicon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="91.0" prefWidth="387.0">
+                           <children>
+                              <Label fx:id="Word" alignment="CENTER" lineSpacing="2.0" prefHeight="58.0" prefWidth="378.0" style="-fx-background-color: #f0f0f0; -fx-padding: 10px; -fx-border-color: #cccccc; -fx-border-width: 1px; -fx-border-radius: 5px;" textAlignment="JUSTIFY">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <GridPane alignment="CENTER" prefHeight="235.0" prefWidth="358.0" style="-fx-padding: 5px; -fx-background-color: #f0f0f0; -fx-border-color: #cccccc; -fx-border-width: 1px; -fx-border-radius: 5px;" BorderPane.alignment="CENTER">
               <columnConstraints>
-                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="playerName" GridPane.columnSpan="2">
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="D" GridPane.columnIndex="3">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="14.0" />
                      </font>
-                  </Label>
-                  <Label fx:id="score" text="0" GridPane.columnIndex="2">
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="C" GridPane.columnIndex="2">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="B" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="I" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="F" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="G" GridPane.columnIndex="6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="O" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="E" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="J" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="K" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="L" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="M" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="N" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="P" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="Q" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="Z" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="W" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="T" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="S" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="R" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="X" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="Y" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="Ñ" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="H" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button id="boton" mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="A">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="V" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onHandleButtonLetter" styleClass="boton-a" text="U" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="4" />
+                  <Label fx:id="interactionLabel" alignment="CENTER" prefHeight="50.0" prefWidth="320.0" text="Escoge una letra" wrapText="true" GridPane.columnSpan="7" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
                </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
             </GridPane>
-            <AnchorPane fx:id="PaneStart" layoutY="241.0" prefHeight="100.0" prefWidth="600.0">
+         </center>
+         <bottom>
+            <HBox fx:id="HboxErorr" alignment="CENTER" prefHeight="83.0" prefWidth="328.0" spacing="10.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <BorderPane opacity="0.91" prefHeight="525.0" prefWidth="388.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <PasswordField fx:id="word" layoutX="171.0" layoutY="14.0" prefHeight="37.0" prefWidth="244.0" promptText="Ingresa La palabra deseada" style="-fx-background-color: #3e3e3e; -fx-border-color: red; -fx-border-width: 3px;">
+                  <Label fx:id="playerName">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="score" text="0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="100.0" prefWidth="184.0">
+                     <children>
+                        <Button layoutX="109.0" layoutY="39.0" lineSpacing="6.0" mnemonicParsing="false" onAction="#onHandleButtonHelp" prefHeight="36.0" prefWidth="97.0" style="-fx-background-color: #3c3c3c; -fx-border-color: #540085; -fx-border-width: 3px;" text="Ayuda">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5165745856353592" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="1.0" green="1.0" blue="1.0" opacity="0.40458014607429504" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.5186403393745422" blue="0.7236841917037964" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill></Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <ImageView fx:id="imageHanged" fitHeight="256.0" fitWidth="284.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@images/hanged0.png" />
+               </image>
+            </ImageView>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="65.0" prefWidth="381.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="144.0" layoutY="20.0" mnemonicParsing="false" onAction="#onHandleButtonEnd" style="-fx-border-color: blue; -fx-border-width: 3px; -fx-background-color: #3c3c3c;" text="Volver al inicio">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
-                  </PasswordField>
-                  <Button fx:id="buttonStart" layoutX="260.0" layoutY="63.0" mnemonicParsing="false" onAction="#onHandleButtonGetWord" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Jugar">
                      <textFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                        <RadialGradient centerX="0.5165745856353592" centerY="0.5" radius="0.5">
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="0.9700000286102295" opacity="0.9465649127960205" />
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
                                  <color>
-                                    <Color red="0.10980392247438431" green="0.10980392247438431" blue="0.10980392247438431" />
+                                    <Color green="0.04868420958518982" blue="0.4868420958518982" />
                                  </color>
                               </Stop>
                            </stops>
                         </RadialGradient>
-                     </textFill>
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
+                     </textFill></Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="GamePane" layoutY="247.0" prefHeight="100.0" prefWidth="600.0" visible="false">
-               <children>
-                  <Button layoutX="243.0" layoutY="56.0" mnemonicParsing="false" style="-fx-background-color: #3e3e3e; -fx-border-color: #8f0000; -fx-border-width: 3px;" text="Probar Letra" textAlignment="CENTER">
-                     <textFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.9700000286102295" opacity="0.9465649127960205" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.10980392247438431" green="0.10980392247438431" blue="0.10980392247438431" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </RadialGradient>
-                     </textFill>
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <TextField layoutX="180.0" layoutY="7.0" prefHeight="30.0" prefWidth="235.0" promptText="Ingresa la letra" style="-fx-background-color: #3e3e3e; -fx-border-color: red; -fx-border-width: 3px;">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
+         </bottom>
+      </BorderPane>
    </children>
-</VBox>
+</HBox>
