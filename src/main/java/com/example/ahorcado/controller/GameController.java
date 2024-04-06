@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
@@ -38,17 +37,6 @@ public class GameController {
     @FXML
     private HBox HboxErorr;
 
-    @FXML
-    public void onHandleButtonBack(ActionEvent event) throws IOException {
-        WelcomeStage.getInstance();
-        GameStage.deleteInstance();
-    }
-
-    @FXML
-    public void onHandleButtonGetWord(ActionEvent event) throws IOException {
-        PaneStart.setVisible(false);
-        GamePane.setVisible(true);
-    }
     // para volver al inicio despues de jugar
     @FXML
     public void onHandleButtonEnd(ActionEvent event) throws IOException{
@@ -66,7 +54,7 @@ public class GameController {
         }
     }
     public void onHandleButtonLetter(ActionEvent event){
-interactionLabel.setWrapText(true);
+        interactionLabel.setWrapText(true);
         if(game.getStart()){
             Button eventButton = (Button) event.getSource();
             String letter = eventButton.getText();
@@ -75,6 +63,7 @@ interactionLabel.setWrapText(true);
             String word = game.getWord();
 
             for (int i = 0;i < word.length();i++) {
+
                 if (letter.equals(String.valueOf(word.charAt(i)))){
                     prov = reemplazarIndice(prov, i, letter.charAt(0));
                     player.setScore(player.getScore() + 50);
@@ -85,7 +74,7 @@ interactionLabel.setWrapText(true);
 
             if(word.contains(letter)){
 
-                eventButton.setStyle("-fx-text-fill: white; -fx-background-color: green; -fx-border-color: white");
+                eventButton.setStyle("-fx-text-fill: white; -fx-background-color:  #3c3c3c; -fx-border-color: green;-fx-border-width: 2px");
                 if(Objects.equals(Word.getText(), game.getWord())){
                     setInteractionLabel("Ganaste!! Palabra:" +game.getWord()+"\uD83D\uDE00", "green");
                     game.endGame();
@@ -101,7 +90,7 @@ interactionLabel.setWrapText(true);
                     imageHanged.setImage(game.getImg());
                     player.setScore(player.getScore() - 75);
                     cambiarPuntaje();
-                    eventButton.setStyle("-fx-text-fill: white; -fx-background-color: red; -fx-border-color: white");
+                    eventButton.setStyle("-fx-text-fill: white; -fx-background-color:  #3c3c3c; -fx-border-color: red;-fx-border-width: 2px");
                 }
                 if(game.getAttempts() == 6){
                     setInteractionLabel("Perdiste!! Palabra:" +game.getWord() +"\uD83D\uDE41", "red");
@@ -118,7 +107,7 @@ interactionLabel.setWrapText(true);
         playerName.setText(player.getName());
         game = new Game(palabra.toUpperCase());
 
-        String prov = "_".repeat(game.getWord().length());
+        String prov = generarCadenaGuiones(game.getWord());
 
         Word.setText(prov);
     }
@@ -165,12 +154,32 @@ interactionLabel.setWrapText(true);
     private void darPista() {
         String palabraSecreta = game.getWord();
         char pista = obtenerPista(palabraSecreta);
-        while (game.help.contains(pista) && Word.getText().contains(""+pista)) {
-            System.out.println("true");
-            pista = obtenerPista(palabraSecreta);
-        }
-        game.help.add(pista);
+        if(game.getStart()){
+            while (Word.getText().contains(""+pista) || game.help.contains(pista) ) {
+                pista = obtenerPista(palabraSecreta);
+            }
+            game.help.add(pista);
 
-        setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
+            setInteractionLabel("Pista: La palabra secreta contiene la letra '" + pista + "'.", "purple");
+        }
+    }
+
+    public static String generarCadenaGuiones(String palabra) {
+        StringBuilder cadena = new StringBuilder();
+
+        // Itera sobre cada caracter de la palabra original
+        for (int i = 0; i < palabra.length(); i++) {
+            char caracter = palabra.charAt(i);
+
+            // Si el caracter es un espacio, añade un espacio en blanco a la cadena
+            if (caracter == ' ') {
+                cadena.append(' ');
+            } else {
+                // Si no es un espacio, añade un guion bajo a la cadena
+                cadena.append('_');
+            }
+        }
+
+        return cadena.toString();
     }
 }
